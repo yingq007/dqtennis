@@ -1,0 +1,114 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+
+/* Fonts */
+body {
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+  background-color: #ffffff;
+  color: #1f2937;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Hero overlay */
+header {
+  position: relative;
+}
+header::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
+  z-index: 0;
+}
+header h1,
+header p,
+header button {
+  position: relative;
+  z-index: 10;
+}
+
+/* Gallery images */
+img {
+  width: 100%;
+  height: auto;
+  border-radius: 1rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+/* Card hover effect */
+.card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 24px rgba(0,0,0,0.2);
+}
+
+/* Input and textarea styling */
+input, textarea {
+  border: 1px solid #d1d5db;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+input:focus, textarea:focus {
+  border-color: #16a34a;
+  box-shadow: 0 0 0 2px rgba(22,163,52,0.2);
+  outline: none;
+}
+
+/* Button focus */
+button:focus {
+  outline: 2px solid #16a34a;
+  outline-offset: 2px;
+}
+
+/* Footer styling */
+footer {
+  background-color: #111827;
+  color: #9ca3af;
+  padding: 1rem;
+  text-align: center;
+  font-size: 0.875rem;
+}
+
+/* Navbar transition */
+nav {
+  transition: box-shadow 0.3s ease;
+}
+
+/* Section alternating backgrounds */
+section:nth-child(even) {
+  background-color: #f9fafb;
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+  header h1 {
+    font-size: 3rem;
+  }
+  header p {
+    font-size: 1.25rem;
+  }
+  section {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+  nav ul {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}
