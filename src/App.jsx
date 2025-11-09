@@ -143,8 +143,8 @@ export default function App() {
       {/* Contact */}
       <section id="contact" className="py-16 px-8 pt-24 text-center bg-gray-800 text-white">
         <h2 className="text-3xl font-semibold mb-4">Contact Us</h2>
-        <p>Email: info@dqtennis.com | Phone: (555) 123-4567</p>
-        <p className="mt-2">1234 Indoor Ct, Sunnyvale, CA</p>
+        <p>Email: dongsiyang104@gmail.com| yingq007@gmail.com </p>
+        <p className="mt-2">251 South Mary Aveune Unit 2, Sunnyvale, CA 94086</p>
       </section>
   
     {/* Footer */}
