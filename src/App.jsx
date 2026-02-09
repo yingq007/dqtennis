@@ -2,6 +2,56 @@ import React, { useState } from "react";
 import Card from "@/components/ui/Card";
 import './index.css';
 
+function CourtReserveWidget() {
+  useEffect(() => {
+    const handler = (e) => {
+      if (!e?.data?.action) return;
+
+      switch (e.data.action) {
+        case "setHeight": {
+          const embedCodeId = e.data.embedCodeId;
+
+          if (embedCodeId) {
+            const elements = document.getElementsByClassName("form-iframe-" + embedCodeId);
+            for (let i = 0; i < elements.length; i++) {
+              elements[i].style.height = e.data.height + "px";
+            }
+          } else {
+            const iframe = document.getElementById("form-iframe");
+            if (iframe) iframe.style.height = e.data.height + "px";
+          }
+          break;
+        }
+
+        case "eventClick": {
+          // Optional: hook if you want tracking
+          // const eventId = e.data?.params?.eventId;
+          // const reservationId = e.data?.params?.reservtionId; // note: CourtReserve typo
+          break;
+        }
+
+        default:
+          break;
+      }
+    };
+
+    window.addEventListener("message", handler);
+    return () => window.removeEventListener("message", handler);
+  }, []);
+
+  return (
+    <div style={{ maxWidth: 1100, margin: "0 auto" }}>
+      <iframe
+        id="form-iframe"
+        className="form-iframe-100698"
+        src="https://widgets.courtreserve.com/Online/Public/EmbedCode/17486/100698"
+        style={{ margin: 0, width: "100%", border: "none", overflow: "hidden" }}
+        scrolling="no"
+        title="Book a session"
+      />
+    </div>
+  );
+}
 
 function Button({ children }) {
   return (
@@ -42,6 +92,7 @@ export default function App() {
       </nav>
 
       {/* Hero */}
+      
       
       <header
         id="hero"
@@ -111,6 +162,7 @@ export default function App() {
       {/* Booking */}
       <section id="booking" className="bg-green-50 py-16 px-8 pt-24 text-center">
         <h2 className="text-3xl font-semibold mb-4">Book a Session</h2>
+        <CourtReserveWidget />
         <p className="mb-8 text-gray-700">
           Choose your time and start training today. Use the form below or email us directly.
         </p>
@@ -153,4 +205,5 @@ export default function App() {
     </footer>
   </div>
   );
+
   }
