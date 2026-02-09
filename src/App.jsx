@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import React, { useEffect } from "react";
+
 import Card from "@/components/ui/Card";
 import './index.css';
 
