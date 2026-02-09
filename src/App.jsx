@@ -1,6 +1,5 @@
-import React, { useState } from "react";
-import React, { useEffect } from "react";
-import Card from "@/components/ui/Card";
+import React, { useState, useEffect } from "react";
+import Card from "./components/ui/Card";
 import './index.css';
 
 function CourtReserveWidget() {
@@ -103,7 +102,7 @@ export default function App() {
         <h1 className="text-6xl font-bold drop-shadow-lg">DQ Tennis</h1>
         <p className="mt-4 text-2xl drop-shadow-md">Train Anytime. Play Smarter.</p>
         <div className="mt-6">
-          <Button>Book a Session</Button>
+        <a href="#booking"><Button>Book a Session</Button></a>
         </div>
       </header>
 
