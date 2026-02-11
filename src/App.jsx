@@ -21,8 +21,8 @@ export default function App() {
     alert("Thank you! We'll get back to you soon.");
     setForm({ name: "", email: "", message: "" });
   };
-
-  const bookingUrl = "https://app.courtreserve.com/Online/Portal/Index/17486";
+     const bookingUrl = "https://square.site/appointments/buyer/widget/b54ahozn98zd6i/LZ29TNF6ZB00J.js"
+  // const bookingUrl = "https://app.courtreserve.com/Online/Portal/Index/17486";
 
   return (
     <div className="font-sans text-gray-800">
