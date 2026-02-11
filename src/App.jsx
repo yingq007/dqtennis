@@ -31,7 +31,7 @@ export default function App() {
         <div className="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
           <div className="text-2xl font-bold text-green-700">DQ Tennis</div>
           <ul className="hidden md:flex space-x-6">
-            {["Home", "About", "Services", "Gallery", "Booking", "Contact"].map(
+            {["Home", "About", "Services", "Gallery", "Contact"].map(
               (section) => (
                 <li key={section}>
                   <a
