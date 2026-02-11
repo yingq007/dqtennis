@@ -115,50 +115,6 @@ export default function App() {
         </div>
       </section>
 
-      {/* Booking */}
-      <section id="booking" className="bg-green-50 py-16 px-8 pt-24 text-center">
-        <h2 className="text-3xl font-semibold mb-4">Book a Session</h2>
-
-        <div className="mb-6">
-          <a
-            href={bookingUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-block"
-          >
-            <Button>Book Now</Button>
-          </a>
-        </div>
-
-        <p className="mb-8 text-gray-700">
-          Choose your time and start training today. Use the form below or email us directly.
-        </p>
-
-        <form onSubmit={handleSubmit} className="max-w-md mx-auto flex flex-col gap-4">
-          <input
-            name="name"
-            onChange={handleChange}
-            value={form.name}
-            placeholder="Your Name"
-            required
-          />
-          <input
-            name="email"
-            onChange={handleChange}
-            value={form.email}
-            placeholder="Email"
-            required
-          />
-          <textarea
-            name="message"
-            onChange={handleChange}
-            value={form.message}
-            placeholder="Preferred Date & Time"
-            rows="3"
-          />
-          <Button>Submit</Button>
-        </form>
-      </section>
 
       {/* Contact */}
       <section id="contact" className="py-16 px-8 pt-24 text-center bg-gray-800 text-white">
