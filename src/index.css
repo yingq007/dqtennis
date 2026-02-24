@@ -13,47 +13,39 @@ html {
   scroll-behavior: smooth;
 }
 
-/* Hero overlay */
+/* Hero is handled with inline stacked divs + gradient overlay */
 header {
   position: relative;
 }
-header::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.35);
-  z-index: 0;
-}
-header h1,
-header p,
-header button {
+
+/* Scroll-snap sections: contact section needs relative for the absolute footer */
+#contact {
   position: relative;
-  z-index: 10;
 }
 
-/* Gallery images */
-img {
-  width: 100%;
-  height: auto;
-  border-radius: 1rem;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-img:hover {
-  transform: scale(1.05);
-  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-}
-
-/* Section backgrounds */
+/* Section transition */
 section {
   transition: background 0.3s ease;
 }
-section:nth-child(even) {
-  background-color: #f9fafb;
+
+/* Sections that contain absolute-positioned footers */
+section:has(footer) {
+  position: relative;
+}
+
+/* Reset global footer styles — footers inside sections are inline */
+section footer {
+  background-color: transparent;
+  padding: 0;
+  position: absolute;
+  bottom: 1.5rem;
+  left: 0;
+  right: 0;
 }
 
 /* Buttons focus */
 button:focus {
-  outline: 2px solid #16a34a;
+  outline: 2px solid #C85A2E;
   outline-offset: 2px;
 }
 
@@ -65,24 +57,14 @@ input, textarea {
   transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 input:focus, textarea:focus {
-  border-color: #16a34a;
-  box-shadow: 0 0 0 2px rgba(22,163,52,0.2);
+  border-color: #C85A2E;
+  box-shadow: 0 0 0 2px rgba(200, 90, 46, 0.2);
   outline: none;
-}
-
-/* Footer */
-footer {
-  background-color: #111827;
-  color: #9ca3af;
-  padding: 1rem;
-  text-align: center;
-  font-size: 0.875rem;
 }
 
 /* Navbar */
 nav {
   transition: box-shadow 0.3s ease;
-  z-index: 50;
 }
 
 /* Card hover */
@@ -91,23 +73,12 @@ nav {
 }
 .card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 12px 24px rgba(0,0,0,0.2);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
 }
 
-/* Responsive tweaks */
+/* Mobile: hero h1 scaling */
 @media (max-width: 768px) {
   header h1 {
-    font-size: 3rem;
-  }
-  header p {
-    font-size: 1.25rem;
-  }
-  section {
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
-  }
-  nav ul {
-    flex-direction: column;
-    gap: 0.5rem;
+    font-size: 3.5rem;
   }
 }
