@@ -243,7 +243,7 @@ export default function App() {
           Train Without<br />Limits.
         </h2>
         <p className="text-forest-light text-lg md:text-xl max-w-lg mb-10">
-          Skip per-session booking. Unlimited court access starts at $99/mo — no contract, cancel anytime.
+          Skip per-session booking. Unlimited court access available — no contract, cancel anytime.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <Button variant="secondary" className="text-base px-8 py-4" onClick={() => setPage("membership")}>

@@ -2,88 +2,10 @@ import React, { useState } from "react";
 import PricingCard from "@/components/ui/PricingCard";
 import Button from "@/components/ui/Button";
 import { BOOKING_URL, MEMBERSHIP_URL } from "@/config";
+import membershipData from "@/data/membership.json";
 
-const TIERS = [
-  {
-    tier: "Day Pass",
-    price: "$30",
-    period: "",
-    description: "Per visit · no commitment",
-    features: [
-      "Single self-practice session (1 hr)",
-      "Ball machine included",
-      "Video replay system",
-      "Book any available slot",
-    ],
-    ctaLabel: "Buy a Day Pass",
-    ctaHref: MEMBERSHIP_URL,
-    highlighted: false,
-  },
-  {
-    tier: "Monthly",
-    price: "$99",
-    period: "/mo",
-    description: "Best for regular players",
-    features: [
-      "Unlimited self-practice sessions",
-      "Ball machine included",
-      "Video replay system",
-      "Member booking priority",
-    ],
-    ctaLabel: "Start Monthly",
-    ctaHref: MEMBERSHIP_URL,
-    highlighted: false,
-  },
-  {
-    tier: "Premium",
-    price: "$149",
-    period: "/mo",
-    description: "Best for improving players",
-    features: [
-      "Everything in Monthly",
-      "1 private coaching session / mo",
-      "1 guest pass per month",
-      "Early court access (6 am slots)",
-    ],
-    ctaLabel: "Start Premium",
-    ctaHref: MEMBERSHIP_URL,
-    highlighted: true,
-  },
-  {
-    tier: "Annual",
-    price: "$1,199",
-    period: "/yr",
-    description: "Best value · pay once",
-    features: [
-      "Everything in Premium",
-      "2 coaching sessions per month",
-      "2 guest passes per month",
-      "Free racket restring (1 / yr)",
-    ],
-    ctaLabel: "Start Annual",
-    ctaHref: MEMBERSHIP_URL,
-    highlighted: false,
-  },
-];
-
-const FAQS = [
-  {
-    q: "Can I cancel my membership anytime?",
-    a: "Yes. Monthly memberships can be cancelled at any time with no cancellation fee. Your access continues until the end of the current billing period.",
-  },
-  {
-    q: "Do I need to book in advance, or can I walk in?",
-    a: "Members must reserve a court slot to guarantee availability — booking takes under 2 minutes via CourtReserve. Members get priority access to early and peak-hour slots.",
-  },
-  {
-    q: "What equipment is included in each session?",
-    a: "All self-practice sessions include the automatic ball machine and on-court video replay system. Balls are provided. You bring your own racket.",
-  },
-  {
-    q: "Can I bring a guest?",
-    a: "Day Pass and Monthly members can bring a guest by purchasing an additional Day Pass for them. Premium and Annual members each receive a monthly guest pass included in their plan.",
-  },
-];
+const TIERS = membershipData.tiers.map((tier) => ({ ...tier, ctaHref: MEMBERSHIP_URL }));
+const FAQS = membershipData.faqs;
 
 function FAQItem({ question, answer, isOpen, onToggle }) {
   return (
