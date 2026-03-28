@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import PricingCard from "@/components/ui/PricingCard";
 import Button from "@/components/ui/Button";
-import { BOOKING_URL, MEMBERSHIP_URL } from "@/config";
+import BookingModal from "@/components/ui/BookingModal";
 import membershipData from "@/data/membership.json";
 
-const TIERS = membershipData.tiers.map((tier) => ({ ...tier, ctaHref: MEMBERSHIP_URL }));
+const TIERS = membershipData.tiers;
 const FAQS = membershipData.faqs;
 
 function FAQItem({ question, answer, isOpen, onToggle }) {
@@ -29,9 +29,12 @@ function FAQItem({ question, answer, isOpen, onToggle }) {
 
 export default function MembershipPage({ onBack }) {
   const [openFaq, setOpenFaq] = useState(null);
+  const [showBooking, setShowBooking] = useState(false);
 
   return (
     <div className="h-screen overflow-y-scroll snap-y snap-mandatory font-sans text-gray-800">
+
+      {showBooking && <BookingModal onClose={() => setShowBooking(false)} />}
 
       {/* Navbar */}
       <nav className="fixed top-0 left-0 w-full bg-white/90 backdrop-blur-sm shadow-sm z-50">
@@ -49,16 +52,11 @@ export default function MembershipPage({ onBack }) {
             >
               ← Back to Home
             </button>
-            <a
-              href={BOOKING_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hidden md:block"
-            >
+            <button onClick={() => setShowBooking(true)} className="hidden md:block">
               <Button variant="primary" className="text-sm px-4 py-2">
                 Book a Court
               </Button>
-            </a>
+            </button>
           </div>
         </div>
       </nav>
@@ -84,7 +82,7 @@ export default function MembershipPage({ onBack }) {
         <h2 className="text-3xl md:text-4xl font-bold text-center mb-10 text-forest">Pick Your Plan</h2>
         <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 items-center w-full">
           {TIERS.map((tier) => (
-            <PricingCard key={tier.tier} {...tier} />
+            <PricingCard key={tier.tier} {...tier} onCta={() => setShowBooking(true)} />
           ))}
         </div>
         <p className="text-center text-sm text-gray-500 mt-8">
@@ -117,12 +115,12 @@ export default function MembershipPage({ onBack }) {
         <h2 className="text-5xl md:text-6xl font-bold mb-4 leading-none">Join Today.</h2>
         <p className="text-gray-400 text-lg mb-10">No contract. Cancel anytime. First session on us.</p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <a href={MEMBERSHIP_URL} target="_blank" rel="noopener noreferrer">
-            <Button variant="primary" className="text-base px-8 py-4">Join Now</Button>
-          </a>
-          <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer">
-            <Button variant="secondary" className="text-base px-8 py-4">Try a Day Pass First</Button>
-          </a>
+          <Button variant="primary" className="text-base px-8 py-4" onClick={() => setShowBooking(true)}>
+            Join Now
+          </Button>
+          <Button variant="secondary" className="text-base px-8 py-4" onClick={() => setShowBooking(true)}>
+            Try a Day Pass First
+          </Button>
         </div>
         <footer className="absolute bottom-6 text-xs text-gray-600">
           &copy; {new Date().getFullYear()} DQ Tennis. All rights reserved.

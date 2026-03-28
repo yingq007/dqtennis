@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import Card from "./components/ui/Card";
 import Button from "./components/ui/Button";
+import BookingModal from "./components/ui/BookingModal";
 import MembershipPage from "./pages/MembershipPage";
-import { BOOKING_URL } from "./config";
 import "./index.css";
 
 const SLIDES = [
@@ -15,7 +15,7 @@ const SLIDES = [
 export default function App() {
   const [page, setPage] = useState("home");
   const [slideIndex, setSlideIndex] = useState(0);
-  const [form, setForm] = useState({ name: "", email: "", message: "" });
+  const [showBooking, setShowBooking] = useState(false);
 
   useEffect(() => {
     const timer = setInterval(
@@ -25,22 +25,14 @@ export default function App() {
     return () => clearInterval(timer);
   }, []);
 
-  const handleChange = (e) =>
-    setForm({ ...form, [e.target.name]: e.target.value });
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    alert("Thank you! We'll get back to you soon.");
-    setForm({ name: "", email: "", message: "" });
-  };
-
   if (page === "membership") {
     return <MembershipPage onBack={() => setPage("home")} />;
   }
 
   return (
-    // Scroll-snap container: each child section snaps to full viewport
     <div className="h-screen overflow-y-scroll snap-y snap-mandatory font-sans text-gray-800">
+
+      {showBooking && <BookingModal onClose={() => setShowBooking(false)} />}
 
       {/* Navbar — fixed to viewport, floats above all snap sections */}
       <nav className="fixed top-0 left-0 w-full bg-white/90 backdrop-blur-sm shadow-sm z-50">
@@ -68,16 +60,11 @@ export default function App() {
             </li>
           </ul>
 
-          <a
-            href={BOOKING_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hidden md:block"
-          >
+          <button onClick={() => setShowBooking(true)} className="hidden md:block">
             <Button variant="primary" className="text-sm px-4 py-2">
               Book a Court
             </Button>
-          </a>
+          </button>
         </div>
       </nav>
 
@@ -111,9 +98,9 @@ export default function App() {
           </p>
 
           <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer">
-              <Button variant="primary" className="text-base px-8 py-4">Book a Court</Button>
-            </a>
+            <Button variant="primary" className="text-base px-8 py-4" onClick={() => setShowBooking(true)}>
+              Book a Court
+            </Button>
             <Button variant="secondary" className="text-base px-8 py-4" onClick={() => setPage("membership")}>
               View Memberships
             </Button>
@@ -249,9 +236,9 @@ export default function App() {
           <Button variant="secondary" className="text-base px-8 py-4" onClick={() => setPage("membership")}>
             See Membership Plans
           </Button>
-          <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer">
-            <Button variant="primary" className="text-base px-8 py-4">Book a Single Session</Button>
-          </a>
+          <Button variant="primary" className="text-base px-8 py-4" onClick={() => setShowBooking(true)}>
+            Book a Single Session
+          </Button>
         </div>
       </section>
 
@@ -267,9 +254,9 @@ export default function App() {
           <p className="mt-4">251 South Mary Avenue Unit 2<br />Sunnyvale, CA 94086</p>
         </div>
         <div className="mt-12">
-          <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer">
-            <Button variant="primary" className="text-base px-8 py-4">Book a Court Now</Button>
-          </a>
+          <Button variant="primary" className="text-base px-8 py-4" onClick={() => setShowBooking(true)}>
+            Book a Court Now
+          </Button>
         </div>
 
         <footer className="absolute bottom-6 text-xs text-gray-500">
