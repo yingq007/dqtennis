@@ -1,22 +1,27 @@
 import React from "react";
 
-const variants = {
-  // Forest green — Roland Garros green, all primary CTAs
-  primary:
-    "bg-forest hover:bg-forest-dark text-white border-2 border-forest hover:border-forest-dark",
-  // White outlined — for use on dark/colored backgrounds
-  secondary:
-    "bg-transparent hover:bg-white/10 text-white border-2 border-white",
-  // Clay terracotta — explicit accent CTA when needed
-  clay:
-    "bg-clay hover:bg-clay-dark text-white border-2 border-clay hover:border-clay-dark",
-};
+export default function Button({
+  children,
+  onClick,
+  variant = "primary",
+  className = "",
+}) {
+  const base =
+    "inline-flex items-center justify-center rounded-2xl font-semibold transition-all duration-200 active:scale-95";
 
-export default function Button({ children, variant = "primary", className = "", ...props }) {
+  const variants = {
+    primary:
+      "bg-clay text-white shadow-lg hover:shadow-xl hover:-translate-y-0.5 px-6 py-3 text-base",
+    secondary:
+      "bg-white text-forest border border-gray-300 hover:bg-gray-50 px-6 py-3 text-base",
+    clay:
+      "bg-clay text-white shadow-md hover:shadow-lg px-6 py-3 text-base",
+  };
+
   return (
     <button
-      className={`font-semibold px-6 py-3 rounded-xl transition-all duration-200 ${variants[variant] ?? variants.primary} ${className}`}
-      {...props}
+      onClick={onClick}
+      className={`${base} ${variants[variant]} ${className}`}
     >
       {children}
     </button>
