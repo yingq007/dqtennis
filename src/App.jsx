@@ -35,10 +35,10 @@ export default function App() {
       {/* Navbar */}
       <nav className="fixed top-0 left-0 w-full bg-white/90 backdrop-blur-sm shadow-sm z-50">
         <div className="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
-          <div className="flex items-center gap-2">
+          <a href="#hero" className="flex items-center gap-2">
             <img src="/images/logo.PNG" alt="DQ Tennis logo" className="h-10 w-10 object-contain" />
             <span className="text-2xl font-bold text-forest">DQ Tennis</span>
-          </div>
+          </a>
 
           <ul className="hidden md:flex items-center space-x-6">
             {["About", "Services"].map((section) => (
