@@ -43,11 +43,9 @@ export default function MembershipPage({ onBack }) {
       {/* Navbar */}
       <nav className="fixed top-0 left-0 w-full bg-white/90 backdrop-blur-sm shadow-sm z-50">
         <div className="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
-          <button
-            onClick={onBack}
-            className="text-2xl font-bold text-forest hover:text-forest-dark transition-colors"
-          >
-            DQ Tennis
+          <button onClick={onBack} className="flex items-center gap-2">
+            <img src="/images/logo.PNG" alt="DQ Tennis logo" className="h-10 w-10 object-contain" />
+            <span className="text-2xl font-bold text-forest">DQ Tennis</span>
           </button>
           <div className="flex items-center gap-4">
             <button
