@@ -7,7 +7,10 @@ import "./index.css";
 const BOOK_URL = "https://app.courtreserve.com/Online/Portal/Index/17486";
 
 const SLIDES = [
-  { src: "/images/hero.JPG", position: "center center" },
+  { src: "/images/hero.JPG",     position: "center center" },
+  { src: "/images/gallery1.JPG", position: "center center" },
+  { src: "/images/gallery2.JPG", position: "center center" },
+  { src: "/images/gallery3.JPG", position: "center center" },
 ];
 
 export default function App() {
@@ -32,7 +35,10 @@ export default function App() {
       {/* Navbar */}
       <nav className="fixed top-0 left-0 w-full bg-white/90 backdrop-blur-sm shadow-sm z-50">
         <div className="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
-          <div className="text-2xl font-bold text-forest">DQ Tennis</div>
+          <div className="flex items-center gap-2">
+            <img src="/images/logo.PNG" alt="DQ Tennis logo" className="h-10 w-10 object-contain" />
+            <span className="text-2xl font-bold text-forest">DQ Tennis</span>
+          </div>
 
           <ul className="hidden md:flex items-center space-x-6">
             {["About", "Services"].map((section) => (
@@ -94,6 +100,22 @@ export default function App() {
 
         <div className="absolute inset-0 bg-black/50" />
 
+        {/* Prev / Next arrows */}
+        <button
+          onClick={() => setSlideIndex((i) => (i - 1 + SLIDES.length) % SLIDES.length)}
+          className="absolute left-4 top-1/2 -translate-y-1/2 z-20 w-10 h-10 rounded-full bg-black/30 hover:bg-black/60 text-white text-xl flex items-center justify-center transition-colors"
+          aria-label="Previous slide"
+        >
+          ‹
+        </button>
+        <button
+          onClick={() => setSlideIndex((i) => (i + 1) % SLIDES.length)}
+          className="absolute right-4 top-1/2 -translate-y-1/2 z-20 w-10 h-10 rounded-full bg-black/30 hover:bg-black/60 text-white text-xl flex items-center justify-center transition-colors"
+          aria-label="Next slide"
+        >
+          ›
+        </button>
+
         <div className="relative z-10 flex flex-col items-center">
           <h1 className="text-5xl md:text-6xl font-bold">DQ Tennis</h1>
 
@@ -109,6 +131,18 @@ export default function App() {
               View Pricing
             </Button>
           </div>
+
+          {/* Slide dots */}
+          <div className="flex gap-2 mt-8">
+            {SLIDES.map((_, i) => (
+              <button
+                key={i}
+                onClick={() => setSlideIndex(i)}
+                className={`h-1.5 rounded-full transition-all duration-300 ${i === slideIndex ? "w-6 bg-white" : "w-1.5 bg-white/40"}`}
+                aria-label={`Slide ${i + 1}`}
+              />
+            ))}
+          </div>
         </div>
       </header>
 
@@ -123,8 +157,8 @@ export default function App() {
         </h2>
         <p className="text-gray-600 leading-relaxed max-w-2xl text-lg">
           DQ Tennis is a modern indoor studio designed for players who want to train
-          on their own terms. Automatic ball machines, on-court video replay, and
-          climate-controlled courts — available every day of the week, no instructor required.
+          on their own terms. Automatic ball machines and climate-controlled courts —
+          available every day of the week, no instructor required.
         </p>
         <div className="mt-10 flex flex-wrap justify-center gap-8 text-sm font-semibold text-gray-500">
           {["Ball Machine Included", "Climate-Controlled", "Open 7 Days"].map((feat) => (
