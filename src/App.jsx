@@ -7,10 +7,7 @@ import "./index.css";
 const BOOK_URL = "https://app.courtreserve.com/Online/Portal/Index/17486";
 
 const SLIDES = [
-  { src: "/images/hero.JPG", position: "center" },
-  { src: "/images/gallery1.JPG", position: "center" },
-  { src: "/images/gallery2.JPG", position: "center" },
-  { src: "/images/gallery3.JPG", position: "top center" },
+  { src: "/images/hero.JPG", position: "center center" },
 ];
 
 export default function App() {
@@ -38,7 +35,7 @@ export default function App() {
           <div className="text-2xl font-bold text-forest">DQ Tennis</div>
 
           <ul className="hidden md:flex items-center space-x-6">
-            {["About", "Services", "Gallery", "Contact"].map((section) => (
+            {["About", "Services"].map((section) => (
               <li key={section}>
                 <a
                   href={`#${section.toLowerCase()}`}
@@ -48,14 +45,21 @@ export default function App() {
                 </a>
               </li>
             ))}
-
             <li>
               <button
                 onClick={() => setPage("membership")}
                 className="text-gray-700 hover:text-clay font-semibold transition-colors duration-200"
               >
-                Membership
+                Pricing
               </button>
+            </li>
+            <li>
+              <a
+                href="#contact"
+                className="text-gray-700 hover:text-clay font-semibold transition-colors duration-200"
+              >
+                Contact
+              </a>
             </li>
           </ul>
 
@@ -94,44 +98,58 @@ export default function App() {
           <h1 className="text-5xl md:text-6xl font-bold">DQ Tennis</h1>
 
           <p className="mt-4 text-lg md:text-xl max-w-xl">
-            Indoor courts, ball machines & video analysis — open 7 days a week.
+            Indoor courts, ball machines &amp; video analysis — open 7 days a week.
           </p>
 
-          <div className="mt-8 flex flex-col sm:flex-row gap-4">
-            <Button onClick={() => window.open(BOOK_URL, "_blank")}>
+          <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <Button variant="primary" className="text-base px-8 py-4" onClick={() => window.open(BOOK_URL, "_blank")}>
               Book a Court
             </Button>
-
-            <Button
-              variant="secondary"
-              onClick={() => setPage("membership")}
-            >
-              View Memberships
+            <Button variant="secondary" className="text-base px-8 py-4" onClick={() => setPage("membership")}>
+              View Pricing
             </Button>
           </div>
         </div>
       </header>
+
+      {/* About Section */}
+      <section
+        id="about"
+        className="snap-start h-screen flex flex-col justify-center items-center text-center px-8 bg-white"
+      >
+        <p className="text-xs uppercase tracking-[0.25em] text-clay font-semibold mb-4">Who We Are</p>
+        <h2 className="text-4xl md:text-5xl font-bold mb-6 text-forest max-w-xl leading-tight">
+          Tennis on Your Schedule
+        </h2>
+        <p className="text-gray-600 leading-relaxed max-w-2xl text-lg">
+          DQ Tennis is a modern indoor studio designed for players who want to train
+          on their own terms. Automatic ball machines, on-court video replay, and
+          climate-controlled courts — available every day of the week, no instructor required.
+        </p>
+        <div className="mt-10 flex flex-wrap justify-center gap-8 text-sm font-semibold text-gray-500">
+          {["Ball Machine Included", "Climate-Controlled", "Open 7 Days"].map((feat) => (
+            <span key={feat} className="flex items-center gap-2">
+              <span className="text-clay">✓</span> {feat}
+            </span>
+          ))}
+        </div>
+      </section>
 
       {/* Services */}
       <section
         id="services"
         className="snap-start h-screen flex flex-col justify-center items-center text-center px-8 bg-white"
       >
-        <h2 className="text-4xl font-bold mb-10 text-forest">
-          Our Services
-        </h2>
-
+        <h2 className="text-4xl font-bold mb-10 text-forest">Our Services</h2>
         <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto w-full">
           <Card title="Self-Practice Session">
-            1-hour court rental with ball machine and video analysis.
+            1-hour court rental with ball machine included. Book anytime, no instructor required.
           </Card>
-
-          <Card title="Private Coaching">
-            One-on-one with a certified coach.
+          <Card title="Semi Private Lesson">
+            One-on-one coaching with a certified instructor — available for both adults and kids.
           </Card>
-
-          <Card title="Court Membership">
-            Unlimited monthly access and priority booking.
+          <Card title="Group Lesson">
+            Fun, structured group sessions for adults and kids. Learn together and improve faster.
           </Card>
         </div>
       </section>
@@ -142,16 +160,27 @@ export default function App() {
         className="snap-start h-screen flex flex-col justify-center items-center text-center px-8 bg-gray-900 text-white"
       >
         <h2 className="text-4xl font-bold mb-8">Contact Us</h2>
-
-        <p>info@dq-tennis.com</p>
-        <p className="mt-4">Sunnyvale, CA</p>
-
+        <div className="space-y-3 text-gray-300 text-lg">
+          <a href="mailto:info@dq-tennis.com" className="hover:text-white transition-colors underline underline-offset-4">info@dq-tennis.com</a>
+          <p className="mt-4">251 South Mary Avenue Unit 2<br />Sunnyvale, CA 94086</p>
+        </div>
         <div className="mt-8">
-          <Button onClick={() => window.open(BOOK_URL, "_blank")}>
+          <Button variant="primary" className="text-base px-8 py-4" onClick={() => window.open(BOOK_URL, "_blank")}>
             Book a Court Now
           </Button>
         </div>
+        <footer className="absolute bottom-6 text-xs text-gray-500">
+          &copy; {new Date().getFullYear()} DQ Tennis. All rights reserved.
+          {" · "}
+          <button
+            onClick={() => setPage("membership")}
+            className="underline hover:text-clay transition-colors"
+          >
+            Pricing
+          </button>
+        </footer>
       </section>
+
     </div>
   );
 }

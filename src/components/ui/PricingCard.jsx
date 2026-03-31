@@ -1,5 +1,3 @@
-
-import React from "react";
 import Button from "./Button";
 
 export default function PricingCard({
@@ -20,7 +18,7 @@ export default function PricingCard({
         : "border-gray-200 bg-white hover:shadow-md"}`}
     >
       {badge && (
-        <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-clay text-white text-xs px-3 py-1 rounded-full font-semibold">
+        <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-clay text-white text-xs px-3 py-1 rounded-full font-semibold whitespace-nowrap">
           {badge}
         </div>
       )}

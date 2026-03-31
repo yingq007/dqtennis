@@ -1,59 +1,126 @@
 {
-  "tiers": [
+  "memberships": [
     {
-      "tier": "Day Pass",
-      "price": "$___",
+      "tier": "Pay As You Go",
+      "price": "Free",
       "period": "",
-      "description": "Per visit · no commitment",
+      "description": "",
+      "badge": "Getting Started",
       "features": [
-        "Single self-practice session (1 hr)",
-        "Ball machine included",
-        "Video replay system",
-        "Book any available slot"
+        "No monthly fee",
+        "One-time court bookings",
+        "Reserve up to 3 days in advance",
+        "No access to lessons or packages"
       ],
-      "ctaLabel": "Buy a Day Pass",
+      "ctaLabel": "Get Started",
       "highlighted": false
     },
     {
-      "tier": "Monthly",
-      "price": "$___",
-      "period": "/mo",
-      "description": "Best for regular players",
+      "tier": "Essential",
+      "price": "$14.99",
+      "period": "/month",
+      "description": "",
+      "badge": "Best Value",
       "features": [
-        "Unlimited self-practice sessions",
-        "Ball machine included",
-        "Video replay system",
-        "Member booking priority"
+        "$5 discount on court bookings",
+        "Access to lessons & packages",
+        "Reserve up to 7 days in advance"
       ],
-      "ctaLabel": "Start Monthly",
+      "ctaLabel": "Start Essential",
       "highlighted": false
     },
     {
-      "tier": "Premium",
-      "price": "$___",
-      "period": "/mo",
-      "description": "Best for improving players",
+      "tier": "Pro",
+      "price": "$23.99",
+      "period": "/month",
+      "description": "",
+      "badge": "Most Value",
       "features": [
-        "Everything in Monthly",
-        "1 private coaching session / mo",
-        "1 guest pass per month",
-        "Early court access (6 am slots)"
+        "$5 discount on court bookings",
+        "Access to lessons & packages",
+        "Reserve up to 14 days in advance"
       ],
-      "ctaLabel": "Start Premium",
-      "highlighted": true
+      "ctaLabel": "Start Pro",
+      "highlighted": false
+    }
+  ],
+  "packages": [
+    {
+      "tier": "4 Punches",
+      "price": "$249",
+      "period": "",
+      "description": "",
+      "features": [
+        "4 hours of practice time",
+        "Valid for 1 month"
+      ],
+      "ctaLabel": "Buy Starter",
+      "highlighted": false
     },
     {
-      "tier": "Annual",
-      "price": "$___",
-      "period": "/yr",
-      "description": "Best value · pay once",
+      "tier": "10 Punches",
+      "price": "$599",
+      "period": "",
+      "description": "",
       "features": [
-        "Everything in Premium",
-        "2 coaching sessions per month",
-        "2 guest passes per month",
-        "Free racket restring (1 / yr)"
+        "10 hours of practice time",
+        "Valid for 3 months"
       ],
-      "ctaLabel": "Start Annual",
+      "ctaLabel": "Buy Basic",
+      "highlighted": false
+    },
+    {
+      "tier": "20 Punches",
+      "price": "$1,099",
+      "period": "",
+      "description": "",
+      "features": [
+        "20 hours of practice time",
+        "Valid for 6 months"
+      ],
+      "ctaLabel": "Buy Standard",
+      "highlighted": false
+    },
+    {
+      "tier": "40 Punches",
+      "price": "$1,999",
+      "period": "",
+      "description": "",
+      "features": [
+        "40 hours of practice time",
+        "Valid for 12 months"
+      ],
+      "ctaLabel": "Buy Premium",
+      "highlighted": false
+    }
+  ],
+  "lessons": [
+    {
+      "tier": "Semi Private",
+      "price": "$___",
+      "period": "/session",
+      "description": "Adult or Kids · 1:2",
+      "features": [
+        "1-hour session",
+        "1 coach : 2 students",
+        "Adult & kids available",
+        "Certified instructor"
+      ],
+      "ctaLabel": "Book Semi Private",
+      "highlighted": false
+    },
+    {
+      "tier": "Group Lesson",
+      "price": "$___",
+      "period": "/session",
+      "description": "Adult or Kids · 1:4",
+      "features": [
+        "1-hour session",
+        "1 coach : 4 students",
+        "Adult & kids available",
+        "Fun, structured drills"
+      ],
+      "ctaLabel": "Book Group Lesson",
       "highlighted": false
     }
   ],
@@ -68,11 +135,11 @@
     },
     {
       "q": "What equipment is included in each session?",
-      "a": "All self-practice sessions include the automatic ball machine and on-court video replay system. Balls are provided. You bring your own racket."
+      "a": "All self-practice sessions include the automatic ball machine. Balls are provided. You bring your own racket."
     },
     {
-      "q": "Can I bring a guest?",
-      "a": "Day Pass and Monthly members can bring a guest by purchasing an additional Day Pass for them. Premium and Annual members each receive a monthly guest pass included in their plan."
+      "q": "Are lessons available for kids?",
+      "a": "Yes! Both private and group lessons are available for kids and adults. Contact us to find the right fit for your child's age and skill level."
     }
   ]
 }
