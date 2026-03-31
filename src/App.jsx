@@ -16,6 +16,7 @@ const SLIDES = [
 export default function App() {
   const [page, setPage] = useState("home");
   const [slideIndex, setSlideIndex] = useState(0);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
     const timer = setInterval(
@@ -25,8 +26,11 @@ export default function App() {
     return () => clearInterval(timer);
   }, []);
 
+  const goToPricing = () => { setPage("membership"); window.location.hash = "pricing"; };
+  const goHome = () => { setPage("home"); window.location.hash = ""; };
+
   if (page === "membership") {
-    return <MembershipPage onBack={() => setPage("home")} />;
+    return <MembershipPage onBack={goHome} />;
   }
 
   return (
@@ -40,45 +44,76 @@ export default function App() {
             <span className="text-2xl font-bold text-forest">DQ Tennis</span>
           </a>
 
+          {/* Desktop nav */}
           <ul className="hidden md:flex items-center space-x-6">
             {["About", "Services"].map((section) => (
               <li key={section}>
-                <a
-                  href={`#${section.toLowerCase()}`}
-                  className="text-gray-700 hover:text-clay font-semibold transition-colors duration-200"
-                >
+                <a href={`#${section.toLowerCase()}`} className="text-gray-700 hover:text-clay font-semibold transition-colors duration-200">
                   {section}
                 </a>
               </li>
             ))}
             <li>
-              <button
-                onClick={() => setPage("membership")}
-                className="text-gray-700 hover:text-clay font-semibold transition-colors duration-200"
-              >
+              <button onClick={goToPricing} className="text-gray-700 hover:text-clay font-semibold transition-colors duration-200">
                 Pricing
               </button>
             </li>
             <li>
-              <a
-                href="#contact"
-                className="text-gray-700 hover:text-clay font-semibold transition-colors duration-200"
-              >
+              <a href="#contact" className="text-gray-700 hover:text-clay font-semibold transition-colors duration-200">
                 Contact
               </a>
             </li>
           </ul>
 
           <div className="hidden md:block">
-            <Button
-              variant="primary"
-              className="text-sm px-4 py-2"
-              onClick={() => window.open(BOOK_URL, "_blank")}
-            >
+            <Button variant="primary" className="text-sm px-4 py-2" onClick={() => window.open(BOOK_URL, "_blank")}>
               Book a Court
             </Button>
           </div>
+
+          {/* Hamburger button — mobile only */}
+          <button
+            className="md:hidden flex flex-col gap-1.5 p-2"
+            onClick={() => setMenuOpen((o) => !o)}
+            aria-label="Toggle menu"
+          >
+            <span className={`block w-6 h-0.5 bg-forest transition-all duration-300 ${menuOpen ? "rotate-45 translate-y-2" : ""}`} />
+            <span className={`block w-6 h-0.5 bg-forest transition-all duration-300 ${menuOpen ? "opacity-0" : ""}`} />
+            <span className={`block w-6 h-0.5 bg-forest transition-all duration-300 ${menuOpen ? "-rotate-45 -translate-y-2" : ""}`} />
+          </button>
         </div>
+
+        {/* Mobile menu */}
+        {menuOpen && (
+          <div className="md:hidden bg-white border-t border-gray-100 px-6 py-4 flex flex-col gap-4">
+            {["About", "Services"].map((section) => (
+              <a
+                key={section}
+                href={`#${section.toLowerCase()}`}
+                className="text-gray-700 hover:text-clay font-semibold transition-colors"
+                onClick={() => setMenuOpen(false)}
+              >
+                {section}
+              </a>
+            ))}
+            <button
+              onClick={() => { goToPricing(); setMenuOpen(false); }}
+              className="text-left text-gray-700 hover:text-clay font-semibold transition-colors"
+            >
+              Pricing
+            </button>
+            <a
+              href="#contact"
+              className="text-gray-700 hover:text-clay font-semibold transition-colors"
+              onClick={() => setMenuOpen(false)}
+            >
+              Contact
+            </a>
+            <Button variant="primary" className="text-sm px-4 py-2 w-full" onClick={() => { window.open(BOOK_URL, "_blank"); setMenuOpen(false); }}>
+              Book a Court
+            </Button>
+          </div>
+        )}
       </nav>
 
       {/* Hero Section */}
@@ -127,7 +162,7 @@ export default function App() {
             <Button variant="primary" className="text-base px-8 py-4" onClick={() => window.open(BOOK_URL, "_blank")}>
               Book a Court
             </Button>
-            <Button variant="secondary" className="text-base px-8 py-4" onClick={() => setPage("membership")}>
+            <Button variant="secondary" className="text-base px-8 py-4" onClick={() => goToPricing()}>
               View Pricing
             </Button>
           </div>
@@ -207,7 +242,7 @@ export default function App() {
           &copy; {new Date().getFullYear()} DQ Tennis. All rights reserved.
           {" · "}
           <button
-            onClick={() => setPage("membership")}
+            onClick={() => goToPricing()}
             className="underline hover:text-clay transition-colors"
           >
             Pricing
