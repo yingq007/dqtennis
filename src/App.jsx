@@ -73,7 +73,7 @@ export default function App() {
 
           {/* Hamburger button — mobile only */}
           <button
-            className="md:hidden flex flex-col gap-1.5 p-2"
+            className="flex md:hidden flex-col gap-1.5 p-2"
             onClick={() => setMenuOpen((o) => !o)}
             aria-label="Toggle menu"
           >
