@@ -6,10 +6,7 @@ import { BOOKING_URL } from "./config";
 import "./index.css";
 
 const SLIDES = [
-  { src: "/images/hero.JPG",     position: "center" },
-  { src: "/images/gallery1.JPG", position: "center" },
-  { src: "/images/gallery2.JPG", position: "center" },
-  { src: "/images/gallery3.JPG", position: "top center" },
+  { src: "/images/hero.JPG", position: "center center" },
 ];
 
 export default function App() {
@@ -48,7 +45,7 @@ export default function App() {
           <div className="text-2xl font-bold text-forest">DQ Tennis</div>
 
           <ul className="hidden md:flex items-center space-x-6">
-            {["About", "Services", "Gallery", "Contact"].map((section) => (
+            {["About", "Services"].map((section) => (
               <li key={section}>
                 <a
                   href={`#${section.toLowerCase()}`}
@@ -63,8 +60,16 @@ export default function App() {
                 onClick={() => setPage("membership")}
                 className="text-gray-700 hover:text-clay font-semibold transition-colors duration-200"
               >
-                Membership
+                Pricing
               </button>
+            </li>
+            <li>
+              <a
+                href="#contact"
+                className="text-gray-700 hover:text-clay font-semibold transition-colors duration-200"
+              >
+                Contact
+              </a>
             </li>
           </ul>
 
@@ -90,8 +95,8 @@ export default function App() {
         {SLIDES.map(({ src, position }, i) => (
           <div
             key={src}
-            className="absolute inset-0 bg-cover transition-opacity duration-1000"
-            style={{ backgroundImage: `url(${src})`, backgroundPosition: position, opacity: i === slideIndex ? 1 : 0 }}
+            className="absolute inset-0 transition-opacity duration-1000"
+            style={{ backgroundImage: `url(${src})`, backgroundSize: "cover", backgroundRepeat: "no-repeat", backgroundPosition: position, opacity: i === slideIndex ? 1 : 0 }}
           />
         ))}
 
@@ -115,7 +120,7 @@ export default function App() {
               <Button variant="primary" className="text-base px-8 py-4">Book a Court</Button>
             </a>
             <Button variant="secondary" className="text-base px-8 py-4" onClick={() => setPage("membership")}>
-              View Memberships
+              View Pricing
             </Button>
           </div>
 
@@ -154,7 +159,7 @@ export default function App() {
           climate-controlled courts — available every day of the week, no instructor required.
         </p>
         <div className="mt-10 flex flex-wrap justify-center gap-8 text-sm font-semibold text-gray-500">
-          {["Ball Machine Included", "Video Replay System", "Climate-Controlled", "Open 7 Days"].map((feat) => (
+          {["Ball Machine Included", "Climate-Controlled", "Open 7 Days"].map((feat) => (
             <span key={feat} className="flex items-center gap-2">
               <span className="text-clay">✓</span> {feat}
             </span>
@@ -194,13 +199,13 @@ export default function App() {
         <h2 className="text-4xl md:text-5xl font-bold mb-10 text-forest">Our Services</h2>
         <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto w-full">
           <Card title="Self-Practice Session">
-            1-hour court rental with ball machine and video analysis. Book anytime.
+            1-hour court rental with ball machine included. Book anytime, no instructor required.
           </Card>
-          <Card title="Private Coaching">
-            One-on-one with a certified coach to sharpen your technique and tactics.
+          <Card title="Private Lesson">
+            One-on-one coaching with a certified instructor — available for both adults and kids.
           </Card>
-          <Card title="Court Membership">
-            Unlimited monthly access, member-only hours, and priority booking.
+          <Card title="Group Lesson">
+            Fun, structured group sessions for adults and kids. Learn together and improve faster.
           </Card>
         </div>
       </section>
@@ -234,7 +239,7 @@ export default function App() {
         </div>
       </section>
 
-      {/* ── SECTION 6: Membership CTA ───────────────────────────── */}
+      {/* ── SECTION 6: Pricing CTA ───────────────────────────── */}
       <section
         className="snap-start h-screen flex flex-col justify-center items-center text-center px-8 bg-forest text-white"
       >
@@ -247,7 +252,7 @@ export default function App() {
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <Button variant="secondary" className="text-base px-8 py-4" onClick={() => setPage("membership")}>
-            See Membership Plans
+            See Pricing Plans
           </Button>
           <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer">
             <Button variant="primary" className="text-base px-8 py-4">Book a Single Session</Button>
@@ -279,7 +284,7 @@ export default function App() {
             onClick={() => setPage("membership")}
             className="underline hover:text-clay transition-colors"
           >
-            Membership
+            Pricing
           </button>
         </footer>
       </section>

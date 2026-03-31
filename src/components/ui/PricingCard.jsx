@@ -1,4 +1,3 @@
-import React from "react";
 import Button from "./Button";
 
 export default function PricingCard({
@@ -10,6 +9,7 @@ export default function PricingCard({
   ctaLabel,
   ctaHref,
   highlighted = false,
+  badge,
 }) {
   return (
     <div
@@ -19,9 +19,9 @@ export default function PricingCard({
           : "bg-white text-gray-800"
         }`}
     >
-      {highlighted && (
+      {badge && (
         <span className="absolute -top-4 left-1/2 -translate-x-1/2 bg-clay-light text-clay-dark text-xs font-bold px-4 py-1 rounded-full uppercase tracking-wide whitespace-nowrap">
-          Most Popular
+          {badge}
         </span>
       )}
 
