@@ -166,6 +166,13 @@ export default function App() {
               View Pricing
             </Button>
           </div>
+          <p className="mt-4 text-white/80 text-base font-medium">
+            Create a free account on{" "}
+            <a href={BOOK_URL} target="_blank" rel="noopener noreferrer" className="text-white font-bold underline underline-offset-4 hover:text-clay transition-colors">
+              CourtReserve ↗
+            </a>
+            {" "}to book a court.
+          </p>
 
           {/* Slide dots */}
           <div className="flex gap-2 mt-8">

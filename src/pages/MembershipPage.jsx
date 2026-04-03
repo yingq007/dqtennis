@@ -85,25 +85,42 @@ export default function MembershipPage({ onBack }) {
       {/* ── SECTION 2: Membership ───────────────────────────────── */}
       <section className="snap-start min-h-screen flex flex-col justify-center px-6 py-24 bg-clay-light">
         <p className="text-xs uppercase tracking-[0.25em] text-clay font-semibold mb-2 text-center">Recurring Plans</p>
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-10 text-forest">Membership</h2>
-        <div className="max-w-4xl mx-auto grid grid-cols-1 sm:grid-cols-3 gap-8 items-center w-full">
+        <h2 className="text-3xl md:text-4xl font-bold text-center mb-4 text-forest">Membership</h2>
+        <p className="text-center text-lg mb-10 text-gray-600">
+          Court rate:{" "}
+          <span className="line-through text-gray-400">$88/hr</span>
+          {" → "}
+          <span className="text-forest font-bold text-2xl">$69/hr</span>
+          {" "}as a member
+        </p>
+        <p className="text-center text-sm text-clay font-medium -mt-6 mb-10">
+          * $69/hr member rate valid during soft opening
+        </p>
+        <div className="flex sm:grid sm:grid-cols-2 gap-6 overflow-x-auto sm:overflow-visible pb-4 sm:pb-0 sm:max-w-2xl sm:mx-auto w-full px-1">
           {MEMBERSHIPS.map((tier) => (
-            <PricingCard
-              key={tier.tier}
-              {...tier}
-              onCta={tier.tier === "Pay As You Go" ? handleBookCourt : handleJoinMembership}
-            />
+            <div key={tier.tier} className="min-w-[260px] sm:min-w-0">
+              <PricingCard {...tier} onCta={handleJoinMembership} />
+            </div>
           ))}
         </div>
+        <p className="mt-10 text-center text-gray-600 text-base">
+          Create a free account on{" "}
+          <a href={MEMBERSHIP_URL} target="_blank" rel="noopener noreferrer" className="text-clay font-semibold underline underline-offset-4 hover:text-forest transition-colors">
+            CourtReserve ↗
+          </a>
+          {" "}to book a court.
+        </p>
       </section>
 
       {/* ── SECTION 3: Packages ─────────────────────────────────── */}
       <section className="snap-start min-h-screen flex flex-col justify-center px-6 py-24 bg-white">
         <p className="text-xs uppercase tracking-[0.25em] text-clay font-semibold mb-2 text-center">Court Time</p>
         <h2 className="text-3xl md:text-4xl font-bold text-center mb-10 text-forest">Packages</h2>
-        <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 items-center w-full">
+        <div className="flex lg:grid lg:grid-cols-4 gap-6 overflow-x-auto lg:overflow-visible pb-4 lg:pb-0 lg:max-w-6xl lg:mx-auto w-full px-1">
           {PACKAGES.map((tier) => (
-            <PricingCard key={tier.tier} {...tier} onCta={handleJoinMembership} />
+            <div key={tier.tier} className="min-w-[240px] lg:min-w-0">
+              <PricingCard {...tier} onCta={handleJoinMembership} />
+            </div>
           ))}
         </div>
       </section>
@@ -112,9 +129,11 @@ export default function MembershipPage({ onBack }) {
       <section className="snap-start min-h-screen flex flex-col justify-center px-6 py-24 bg-clay-light">
         <p className="text-xs uppercase tracking-[0.25em] text-clay font-semibold mb-2 text-center">Coaching</p>
         <h2 className="text-3xl md:text-4xl font-bold text-center mb-10 text-forest">Lessons</h2>
-        <div className="max-w-2xl mx-auto grid grid-cols-1 sm:grid-cols-2 gap-8 items-center w-full">
+        <div className="flex sm:grid sm:grid-cols-2 gap-6 overflow-x-auto sm:overflow-visible pb-4 sm:pb-0 sm:max-w-2xl sm:mx-auto w-full px-1">
           {LESSONS.map((tier) => (
-            <PricingCard key={tier.tier} {...tier} onCta={handleBookCourt} />
+            <div key={tier.tier} className="min-w-[260px] sm:min-w-0">
+              <PricingCard {...tier} onCta={handleBookCourt} />
+            </div>
           ))}
         </div>
         <p className="text-center text-sm text-gray-500 mt-8">

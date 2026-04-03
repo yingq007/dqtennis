@@ -1,55 +1,42 @@
 {
   "memberships": [
     {
-      "tier": "Pay As You Go",
+      "tier": "Regular",
       "price": "Free",
       "period": "",
-      "description": "",
-      "badge": "Getting Started",
+      "description": "Free membership",
+      "badge": "Member Rate",
       "features": [
-        "No monthly fee",
-        "One-time court bookings",
+        "$69/hour court rate",
         "Reserve up to 3 days in advance",
-        "No access to lessons or packages"
+        "Access to court packages"
       ],
-      "ctaLabel": "Get Started",
+      "ctaLabel": "Join Free",
       "highlighted": false
     },
     {
-      "tier": "Essential",
-      "price": "$14.99",
+      "tier": "Premium",
+      "price": "$19.99",
       "period": "/month",
-      "description": "",
+      "description": "Best booking access",
       "badge": "Best Value",
       "features": [
-        "$5 discount on court bookings",
-        "Access to lessons & packages",
-        "Reserve up to 7 days in advance"
+        "$69/hour court rate",
+        "Reserve up to 7 days in advance",
+        "Access to court packages",
+        "Priority booking window"
       ],
-      "ctaLabel": "Start Essential",
-      "highlighted": false
-    },
-    {
-      "tier": "Pro",
-      "price": "$23.99",
-      "period": "/month",
-      "description": "",
-      "badge": "Most Value",
-      "features": [
-        "$5 discount on court bookings",
-        "Access to lessons & packages",
-        "Reserve up to 14 days in advance"
-      ],
-      "ctaLabel": "Start Pro",
-      "highlighted": false
+      "ctaLabel": "Join Premium",
+      "highlighted": true
     }
   ],
   "packages": [
     {
-      "tier": "4 Punches",
-      "price": "$249",
+      "tier": "Starter Pack",
+      "price": "$239",
       "period": "",
-      "description": "",
+      "description": "4 hours · 1 month",
+      "badge": "$59.75/hr",
       "features": [
         "4 hours of practice time",
         "Valid for 1 month"
@@ -58,46 +45,49 @@
       "highlighted": false
     },
     {
-      "tier": "10 Punches",
-      "price": "$599",
+      "tier": "Value Pack",
+      "price": "$569",
       "period": "",
-      "description": "",
+      "description": "10 hours · 3 months",
+      "badge": "$56.90/hr",
       "features": [
         "10 hours of practice time",
         "Valid for 3 months"
       ],
-      "ctaLabel": "Buy Basic",
+      "ctaLabel": "Buy Value",
       "highlighted": false
     },
     {
-      "tier": "20 Punches",
-      "price": "$1,099",
+      "tier": "Standard Pack",
+      "price": "$1,089",
       "period": "",
-      "description": "",
+      "description": "20 hours · 6 months",
+      "badge": "$54.45/hr",
       "features": [
         "20 hours of practice time",
         "Valid for 6 months"
       ],
       "ctaLabel": "Buy Standard",
-      "highlighted": false
+      "highlighted": true
     },
     {
-      "tier": "40 Punches",
+      "tier": "Annual Pack",
       "price": "$1,999",
       "period": "",
-      "description": "",
+      "description": "40 hours · 1 year",
+      "badge": "$49.98/hr",
       "features": [
         "40 hours of practice time",
         "Valid for 12 months"
       ],
-      "ctaLabel": "Buy Premium",
+      "ctaLabel": "Buy Annual",
       "highlighted": false
     }
   ],
   "lessons": [
     {
       "tier": "Semi Private",
-      "price": "$___",
+      "price": "$80",
       "period": "/session",
       "description": "Adult or Kids · 1:2",
       "features": [
@@ -111,7 +101,7 @@
     },
     {
       "tier": "Group Lesson",
-      "price": "$___",
+      "price": "$60",
       "period": "/session",
       "description": "Adult or Kids · 1:4",
       "features": [
