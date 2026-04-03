@@ -96,7 +96,7 @@ export default function MembershipPage({ onBack }) {
         <p className="text-center text-sm text-clay font-medium -mt-6 mb-10">
           * $69/hr member rate valid during soft opening
         </p>
-        <div className="flex sm:grid sm:grid-cols-2 gap-6 overflow-x-auto sm:overflow-visible pb-4 sm:pb-0 sm:max-w-2xl sm:mx-auto w-full px-1">
+        <div className="flex sm:grid sm:grid-cols-2 gap-6 overflow-x-auto sm:overflow-visible py-4 sm:max-w-2xl sm:mx-auto w-full px-1">
           {MEMBERSHIPS.map((tier) => (
             <div key={tier.tier} className="min-w-[260px] sm:min-w-0">
               <PricingCard {...tier} onCta={handleJoinMembership} />
@@ -116,7 +116,7 @@ export default function MembershipPage({ onBack }) {
       <section className="snap-start min-h-screen flex flex-col justify-center px-6 py-24 bg-white">
         <p className="text-xs uppercase tracking-[0.25em] text-clay font-semibold mb-2 text-center">Court Time</p>
         <h2 className="text-3xl md:text-4xl font-bold text-center mb-10 text-forest">Packages</h2>
-        <div className="flex lg:grid lg:grid-cols-4 gap-6 overflow-x-auto lg:overflow-visible pb-4 lg:pb-0 lg:max-w-6xl lg:mx-auto w-full px-1">
+        <div className="flex lg:grid lg:grid-cols-4 gap-6 overflow-x-auto lg:overflow-visible py-4 lg:max-w-6xl lg:mx-auto w-full px-1">
           {PACKAGES.map((tier) => (
             <div key={tier.tier} className="min-w-[240px] lg:min-w-0">
               <PricingCard {...tier} onCta={handleJoinMembership} />
