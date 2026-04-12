@@ -84,21 +84,17 @@ export default function MembershipPage({ onBack }) {
 
       {/* ── SECTION 2: Membership ───────────────────────────────── */}
       <section className="snap-start min-h-screen flex flex-col justify-center px-6 py-24 bg-clay-light">
-        <p className="text-xs uppercase tracking-[0.25em] text-clay font-semibold mb-2 text-center">Recurring Plans</p>
         <h2 className="text-3xl md:text-4xl font-bold text-center mb-4 text-forest">Membership</h2>
         <p className="text-center text-lg mb-10 text-gray-600">
           Court rate:{" "}
-          <span className="line-through text-gray-400">$88/hr</span>
-          {" → "}
           <span className="text-forest font-bold text-2xl">$69/hr</span>
-          {" "}as a member
         </p>
         <p className="text-center text-sm text-clay font-medium -mt-6 mb-10">
           * $69/hr member rate valid during soft opening
         </p>
-        <div className="flex sm:grid sm:grid-cols-2 gap-6 overflow-x-auto sm:overflow-visible py-4 sm:max-w-2xl sm:mx-auto w-full px-1">
+        <div className="flex justify-center py-4 w-full px-1">
           {MEMBERSHIPS.map((tier) => (
-            <div key={tier.tier} className="min-w-[260px] sm:min-w-0">
+            <div key={tier.tier} className="w-full max-w-sm">
               <PricingCard {...tier} onCta={handleJoinMembership} />
             </div>
           ))}

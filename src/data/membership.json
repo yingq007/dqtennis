@@ -13,21 +13,6 @@
       ],
       "ctaLabel": "Join Free",
       "highlighted": false
-    },
-    {
-      "tier": "Premium",
-      "price": "$19.99",
-      "period": "/month",
-      "description": "Best booking access",
-      "badge": "Best Value",
-      "features": [
-        "$69/hour court rate",
-        "Reserve up to 7 days in advance",
-        "Access to court packages",
-        "Priority booking window"
-      ],
-      "ctaLabel": "Join Premium",
-      "highlighted": true
     }
   ],
   "packages": [
