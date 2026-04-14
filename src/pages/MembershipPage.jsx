@@ -5,6 +5,7 @@ import membershipData from "../data/membership.json";
 
 const BOOK_URL = "https://app.courtreserve.com/Online/Portal/Index/17486";
 const MEMBERSHIP_URL = "https://app.courtreserve.com/Online/Memberships/Public/17486";
+const GROUP_LESSON_URL = "https://widgets.courtreserve.com/Online/Public/EmbedCode/17486/102267";
 
 const MEMBERSHIPS = membershipData.memberships;
 const PACKAGES    = membershipData.packages;
@@ -128,7 +129,12 @@ export default function MembershipPage({ onBack }) {
         <div className="flex sm:grid sm:grid-cols-2 gap-6 overflow-x-auto sm:overflow-visible pb-4 sm:pb-0 sm:max-w-2xl sm:mx-auto w-full px-1">
           {LESSONS.map((tier) => (
             <div key={tier.tier} className="min-w-[260px] sm:min-w-0">
-              <PricingCard {...tier} onCta={handleBookCourt} />
+              <PricingCard
+                {...tier}
+                onCta={tier.tier === "Group Lesson"
+                  ? () => window.open(GROUP_LESSON_URL, "_blank")
+                  : handleBookCourt}
+              />
             </div>
           ))}
         </div>
