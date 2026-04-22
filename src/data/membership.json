@@ -7,7 +7,7 @@
       "description": "Free membership",
       "badge": "Member Rate",
       "features": [
-        "$69/hour court rate",
+        "$34.5/30mins court rate",
         "Reserve up to 3 days in advance",
         "Access to court packages"
       ],
@@ -17,63 +17,64 @@
   ],
   "packages": [
     {
-      "tier": "Starter Pack",
-      "price": "$239",
+      "tier": "1 Month Plan",
+      "price": "$240",
       "period": "",
-      "description": "4 hours · 1 month",
-      "badge": "$59.75/hr",
+      "description": "8 sessions · 1 month",
+      "badge": "$30/30mins",
       "features": [
-        "4 hours of practice time",
+        "8 x 30-min sessions",
         "Valid for 1 month"
       ],
-      "ctaLabel": "Buy Starter",
+      "ctaLabel": "Buy 1 Month Plan",
       "highlighted": false
     },
     {
-      "tier": "Value Pack",
-      "price": "$569",
+      "tier": "3 Month Pack",
+      "price": "$560",
       "period": "",
-      "description": "10 hours · 3 months",
-      "badge": "$56.90/hr",
+      "description": "20 sessions · 3 months",
+      "badge": "Most Popular · $28/30mins",
       "features": [
-        "10 hours of practice time",
+        "20 x 30-min sessions",
+        "$28/30mins",
         "Valid for 3 months"
       ],
-      "ctaLabel": "Buy Value",
+      "ctaLabel": "Buy 3 Month Pack",
       "highlighted": false
     },
     {
-      "tier": "Standard Pack",
-      "price": "$1,089",
+      "tier": "6 Month Pack",
+      "price": "$1,000",
       "period": "",
-      "description": "20 hours · 6 months",
-      "badge": "$54.45/hr",
+      "description": "40 sessions · 6 months",
+      "badge": "$25/30mins",
       "features": [
-        "20 hours of practice time",
+        "40 x 30-min sessions",
         "Valid for 6 months"
       ],
-      "ctaLabel": "Buy Standard",
-      "highlighted": true
+      "ctaLabel": "Buy 6 Month Pack",
+      "highlighted": false
     },
     {
-      "tier": "Annual Pack",
-      "price": "$1,999",
+      "tier": "12 Month Pack",
+      "price": "$1,600",
       "period": "",
-      "description": "40 hours · 1 year",
-      "badge": "$49.98/hr",
+      "description": "80 sessions · 1 year",
+      "badge": "Best Value · $20/30mins",
       "features": [
-        "40 hours of practice time",
+        "80 x 30-min sessions",
         "Valid for 12 months"
       ],
-      "ctaLabel": "Buy Annual",
-      "highlighted": false
+      "ctaLabel": "Buy 12 Month Pack",
+      "highlighted": true
     }
   ],
   "lessons": [
     {
       "tier": "Semi Private",
-      "price": "$80",
-      "period": "/session",
+      "price": "",
+      "period": "",
       "description": "Adult or Kids · 1:2",
       "features": [
         "1-hour session",
@@ -86,8 +87,8 @@
     },
     {
       "tier": "Group Lesson",
-      "price": "$65",
-      "period": "/session",
+      "price": "",
+      "period": "",
       "description": "Adult or Kids · 1:4",
       "features": [
         "1-hour session",

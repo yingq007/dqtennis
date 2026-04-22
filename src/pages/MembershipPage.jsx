@@ -8,7 +8,6 @@ const MEMBERSHIP_URL = "https://app.courtreserve.com/Online/Memberships/Public/1
 const PACKAGES_URL = "https://app.courtreserve.com/Online/Packages/List/17486";
 const GROUP_LESSON_URL = "https://widgets.courtreserve.com/Online/Public/EmbedCode/17486/102267";
 
-const MEMBERSHIPS = membershipData.memberships;
 const PACKAGES    = membershipData.packages;
 const LESSONS     = membershipData.lessons;
 const FAQS        = membershipData.faqs;
@@ -69,58 +68,47 @@ export default function MembershipPage({ onBack }) {
         </div>
       </nav>
 
-      {/* ── SECTION 1: Hero ─────────────────────────────────────── */}
-      <section className="snap-start h-screen flex flex-col justify-center items-center text-center px-8 bg-forest text-white">
-        <p className="text-xs uppercase tracking-[0.25em] text-clay-light font-semibold mb-4">DQ Tennis</p>
-        <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-none">
-          Plans &amp;<br />Pricing.
-        </h1>
-        <p className="text-forest-light text-lg md:text-xl max-w-lg">
-          Memberships, court packages, and lessons — for adults and kids.
-        </p>
-        <div className="absolute bottom-8 flex flex-col items-center gap-1 text-white/50 text-xs tracking-widest uppercase">
-          <span>Scroll</span>
-          <span className="text-lg animate-bounce">↓</span>
-        </div>
-      </section>
 
       {/* ── SECTION 2: Membership ───────────────────────────────── */}
       <section className="snap-start min-h-screen flex flex-col justify-center px-6 py-24 bg-clay-light">
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-4 text-forest">Membership</h2>
-        <p className="text-center text-lg mb-10 text-gray-600">
-          Court rate:{" "}
-          <span className="text-forest font-bold text-2xl">$69/hr</span>
+        <h2 className="text-3xl md:text-4xl font-bold text-center mb-4 text-forest">Get Started</h2>
+        <p className="text-center text-xl font-semibold text-gray-800 mb-2">
+          Create a free account to book your court.
         </p>
-        <p className="text-center text-sm text-clay font-medium -mt-6 mb-10">
-          * $69/hr member rate valid during soft opening
+        <p className="text-center text-gray-500 mb-6">
+          No membership required.
         </p>
-        <div className="flex justify-center py-4 w-full px-1">
-          {MEMBERSHIPS.map((tier) => (
-            <div key={tier.tier} className="w-full max-w-sm">
-              <PricingCard {...tier} onCta={handleJoinMembership} />
-            </div>
-          ))}
+        <p className="text-center mb-1">
+          <span className="text-clay font-bold text-sm uppercase tracking-widest">Limited Time</span>
+        </p>
+        <p className="text-center mb-2">
+          <span className="text-forest font-bold text-4xl">$20 / 30 mins</span>
+        </p>
+        <p className="text-center text-gray-500 mb-8 text-base">
+          Regular rate{" "}
+          <span className="line-through font-semibold">$34.5 / 30 mins</span>
+        </p>
+        <div className="flex justify-center mb-10">
+          <Button variant="primary" className="text-base px-8 py-4" onClick={handleBookCourt}>
+            Book a Court
+          </Button>
         </div>
-        <p className="mt-10 text-center text-gray-600 text-base">
-          Create a free account on{" "}
-          <a href={MEMBERSHIP_URL} target="_blank" rel="noopener noreferrer" className="text-clay font-semibold underline underline-offset-4 hover:text-forest transition-colors">
-            CourtReserve ↗
-          </a>
-          {" "}to book a court.
-        </p>
       </section>
 
       {/* ── SECTION 3: Packages ─────────────────────────────────── */}
       <section className="snap-start min-h-screen flex flex-col justify-center px-6 py-24 bg-white">
         <p className="text-xs uppercase tracking-[0.25em] text-clay font-semibold mb-2 text-center">Court Time</p>
         <h2 className="text-3xl md:text-4xl font-bold text-center mb-10 text-forest">Packages</h2>
-        <div className="flex lg:grid lg:grid-cols-4 gap-6 overflow-x-auto lg:overflow-visible py-4 lg:max-w-6xl lg:mx-auto w-full px-1">
+        <div className="flex items-stretch lg:grid lg:grid-cols-4 gap-6 overflow-x-auto lg:overflow-visible py-4 lg:max-w-6xl lg:mx-auto w-full px-1">
           {PACKAGES.map((tier) => (
-            <div key={tier.tier} className="min-w-[240px] lg:min-w-0">
+            <div key={tier.tier} className="min-w-[240px] lg:min-w-0 flex flex-col">
               <PricingCard {...tier} onCta={() => window.open(PACKAGES_URL, "_blank")} />
             </div>
           ))}
         </div>
+        <p className="mt-8 text-center text-gray-600 text-base">
+          Drop-in: <span className="font-semibold text-gray-800">$34.5 / 30 mins</span>
+        </p>
       </section>
 
       {/* ── SECTION 4: Lessons ──────────────────────────────────── */}

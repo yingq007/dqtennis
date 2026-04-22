@@ -12,7 +12,7 @@ export default function PricingCard({
   highlighted = false,
 }) {
   return (
-    <div className={`relative rounded-2xl border p-6 flex flex-col justify-between transition-all duration-300
+    <div className={`relative rounded-2xl border p-6 flex flex-col justify-between h-full transition-all duration-300
       ${highlighted
         ? "border-clay shadow-xl scale-105 bg-white"
         : "border-gray-200 bg-white hover:shadow-md"}`}
