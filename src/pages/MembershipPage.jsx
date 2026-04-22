@@ -71,26 +71,20 @@ export default function MembershipPage({ onBack }) {
 
       {/* ── SECTION 2: Membership ───────────────────────────────── */}
       <section className="snap-start min-h-screen flex flex-col justify-center px-6 py-24 bg-clay-light">
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-4 text-forest">Get Started</h2>
-        <p className="text-center text-xl font-semibold text-gray-800 mb-2">
-          Create a free account to book your court.
-        </p>
-        <p className="text-center text-gray-500 mb-6">
-          No membership required.
-        </p>
-        <p className="text-center mb-1">
-          <span className="text-clay font-bold text-sm uppercase tracking-widest">Limited Time</span>
-        </p>
-        <p className="text-center mb-2">
-          <span className="text-forest font-bold text-4xl">$20 / 30 mins</span>
-        </p>
-        <p className="text-center text-gray-500 mb-8 text-base">
-          Regular rate{" "}
-          <span className="line-through font-semibold">$34.5 / 30 mins</span>
-        </p>
+        <h2 className="text-3xl md:text-4xl font-bold text-center mb-2 text-forest">
+          Guided Practice Session
+        </h2>
+        <p className="text-center text-clay font-semibold text-sm uppercase tracking-widest mb-6">Limited Time</p>
+        <p className="text-center text-forest font-bold text-3xl mb-2">$20/30 mins</p>
+        <p className="text-center text-gray-500 mb-6 text-base font-medium">Regular rate <span className="line-through">$34.5/30 mins</span></p>
+        <ul className="flex flex-col items-center gap-2 mb-8 text-gray-700 text-lg font-medium">
+          <li>✔ Staff-assisted setup</li>
+          <li>✔ Beginner-friendly drills</li>
+          <li>✔ No experience needed</li>
+        </ul>
         <div className="flex justify-center mb-10">
           <Button variant="primary" className="text-base px-8 py-4" onClick={handleBookCourt}>
-            Book a Court
+            Book a Session
           </Button>
         </div>
       </section>
@@ -151,23 +145,6 @@ export default function MembershipPage({ onBack }) {
         </div>
       </section>
 
-      {/* ── SECTION 6: Bottom CTA + Footer ──────────────────────── */}
-      <section className="snap-start h-screen flex flex-col justify-center items-center text-center px-8 bg-gray-900 text-white">
-        <p className="text-xs uppercase tracking-[0.25em] text-clay font-semibold mb-4">Ready?</p>
-        <h2 className="text-5xl md:text-6xl font-bold mb-4 leading-none">Join Today.</h2>
-        <p className="text-gray-400 text-lg mb-10">No contract. Cancel anytime.</p>
-        <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <Button variant="primary" className="text-base px-8 py-4" onClick={handleJoinMembership}>
-            Join Now
-          </Button>
-          <Button variant="secondary" className="text-base px-8 py-4" onClick={handleBookCourt}>
-            Try a Day Pass First
-          </Button>
-        </div>
-        <footer className="absolute bottom-6 text-xs text-gray-600">
-          &copy; {new Date().getFullYear()} DQ Tennis. All rights reserved.
-        </footer>
-      </section>
 
     </div>
   );
