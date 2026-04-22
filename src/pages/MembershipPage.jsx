@@ -4,7 +4,6 @@ import Button from "../components/ui/Button";
 import membershipData from "../data/membership.json";
 
 const BOOK_URL = "https://app.courtreserve.com/Online/Portal/Index/17486";
-const MEMBERSHIP_URL = "https://app.courtreserve.com/Online/Memberships/Public/17486";
 const PACKAGES_URL = "https://app.courtreserve.com/Online/Packages/List/17486";
 const GROUP_LESSON_URL = "https://widgets.courtreserve.com/Online/Public/EmbedCode/17486/102267";
 
@@ -36,7 +35,6 @@ export default function MembershipPage({ onBack }) {
   const [openFaq, setOpenFaq] = useState(null);
 
   const handleBookCourt = () => window.open(BOOK_URL, "_blank");
-  const handleJoinMembership = () => window.open(MEMBERSHIP_URL, "_blank");
 
   return (
     <div className="h-screen overflow-y-scroll snap-y snap-mandatory font-sans text-gray-800">
@@ -61,7 +59,7 @@ export default function MembershipPage({ onBack }) {
                 className="text-sm px-5 py-2 rounded-full"
                 onClick={handleBookCourt}
               >
-                Book a Court
+                Book a Session
               </Button>
             </div>
           </div>
@@ -72,7 +70,7 @@ export default function MembershipPage({ onBack }) {
       {/* ── SECTION 2: Membership ───────────────────────────────── */}
       <section className="snap-start min-h-screen flex flex-col justify-center px-6 py-24 bg-clay-light">
         <h2 className="text-3xl md:text-4xl font-bold text-center mb-2 text-forest">
-          Guided Practice Session
+          Ball Machine
         </h2>
         <p className="text-center text-clay font-semibold text-sm uppercase tracking-widest mb-6">Limited Time</p>
         <p className="text-center text-forest font-bold text-3xl mb-2">$20/30 mins</p>

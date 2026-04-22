@@ -67,7 +67,7 @@ export default function App() {
 
           <div className="hidden md:block">
             <Button variant="primary" className="text-sm px-4 py-2" onClick={() => window.open(BOOK_URL, "_blank")}>
-              Book a Court
+              Book a Session
             </Button>
           </div>
 
@@ -110,7 +110,7 @@ export default function App() {
               Contact
             </a>
             <Button variant="primary" className="text-sm px-4 py-2 w-full" onClick={() => { window.open(BOOK_URL, "_blank"); setMenuOpen(false); }}>
-              Book a Court
+              Book a Session
             </Button>
           </div>
         )}
@@ -160,7 +160,7 @@ export default function App() {
 
           <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center items-center">
             <Button variant="primary" className="text-base px-8 py-4" onClick={() => window.open(BOOK_URL, "_blank")}>
-              Book a Court
+              Book a Session
             </Button>
             <Button variant="secondary" className="text-base px-8 py-4" onClick={() => goToPricing()}>
               View Pricing
@@ -242,7 +242,7 @@ export default function App() {
         </div>
         <div className="mt-8">
           <Button variant="primary" className="text-base px-8 py-4" onClick={() => window.open(BOOK_URL, "_blank")}>
-            Book a Court Now
+            Book a Session Now
           </Button>
         </div>
         <footer className="absolute bottom-6 text-xs text-gray-500">
