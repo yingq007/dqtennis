@@ -72,39 +72,33 @@
   ],
   "lessons": [
     {
-      "tier": "Semi Private",
+      "tier": "Adults Beginner",
       "price": "",
       "period": "",
-      "description": "Adult or Kids · 1:2",
+      "description": "",
       "features": [
-        "1-hour session",
-        "1 coach : 2 students",
-        "Adult & kids available",
-        "Certified instructor"
+        "1:4 small group",
+        "Certified coach",
+        "1-hour group lesson + 30 mins self-serve practice session"
       ],
-      "ctaLabel": "Book Semi Private",
+      "ctaLabel": "Book a Lesson",
       "highlighted": false
     },
     {
-      "tier": "Group Lesson",
+      "tier": "Kids Group",
       "price": "",
       "period": "",
-      "description": "Adult or Kids · 1:4",
+      "description": "",
       "features": [
-        "1-hour session",
-        "1 coach : 4 students",
-        "Adult & kids available",
-        "Fun, structured drills"
+        "1:4 small group",
+        "Certified coach",
+        "Free practice session for parents while waiting"
       ],
-      "ctaLabel": "Book Group Lesson",
+      "ctaLabel": "Book a Lesson",
       "highlighted": false
     }
   ],
   "faqs": [
-    {
-      "q": "Can I cancel my membership anytime?",
-      "a": "Yes. Monthly memberships can be cancelled at any time with no cancellation fee. Your access continues until the end of the current billing period."
-    },
     {
       "q": "Do I need to book in advance, or can I walk in?",
       "a": "Members must reserve a court slot to guarantee availability — booking takes under 2 minutes via CourtReserve. Members get priority access to early and peak-hour slots."

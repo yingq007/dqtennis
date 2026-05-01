@@ -4,10 +4,8 @@ import Button from "../components/ui/Button";
 import membershipData from "../data/membership.json";
 
 const BOOK_URL = "https://app.courtreserve.com/Online/Portal/Index/17486";
-const PACKAGES_URL = "https://app.courtreserve.com/Online/Packages/List/17486";
 const GROUP_LESSON_URL = "https://widgets.courtreserve.com/Online/Public/EmbedCode/17486/102267";
 
-const PACKAGES    = membershipData.packages;
 const LESSONS     = membershipData.lessons;
 const FAQS        = membershipData.faqs;
 
@@ -74,7 +72,7 @@ export default function MembershipPage({ onBack }) {
         </h2>
         <p className="text-center text-clay font-semibold text-sm uppercase tracking-widest mb-6">Limited Time</p>
         <p className="text-center text-forest font-bold text-3xl mb-2">$20/30 mins</p>
-        <p className="text-center text-gray-500 mb-6 text-base font-medium">Regular rate <span className="line-through">$34.5/30 mins</span></p>
+        <p className="text-center text-gray-500 mb-6 text-lg font-medium">Regular rate <span className="line-through text-gray-700 font-bold text-2xl">$69/h</span></p>
         <ul className="flex flex-col items-center gap-2 mb-8 text-gray-700 text-lg font-medium">
           <li>✔ Staff-assisted setup</li>
           <li>✔ Beginner-friendly drills</li>
@@ -87,21 +85,6 @@ export default function MembershipPage({ onBack }) {
         </div>
       </section>
 
-      {/* ── SECTION 3: Packages ─────────────────────────────────── */}
-      <section className="snap-start min-h-screen flex flex-col justify-center px-6 py-24 bg-white">
-        <p className="text-xs uppercase tracking-[0.25em] text-clay font-semibold mb-2 text-center">Court Time</p>
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-10 text-forest">Packages</h2>
-        <div className="flex items-stretch lg:grid lg:grid-cols-4 gap-6 overflow-x-auto lg:overflow-visible py-4 lg:max-w-6xl lg:mx-auto w-full px-1">
-          {PACKAGES.map((tier) => (
-            <div key={tier.tier} className="min-w-[240px] lg:min-w-0 flex flex-col">
-              <PricingCard {...tier} onCta={() => window.open(PACKAGES_URL, "_blank")} />
-            </div>
-          ))}
-        </div>
-        <p className="mt-8 text-center text-gray-600 text-base">
-          Drop-in: <span className="font-semibold text-gray-800">$34.5 / 30 mins</span>
-        </p>
-      </section>
 
       {/* ── SECTION 4: Lessons ──────────────────────────────────── */}
       <section className="snap-start min-h-screen flex flex-col justify-center px-6 py-24 bg-clay-light">
@@ -112,7 +95,7 @@ export default function MembershipPage({ onBack }) {
             <div key={tier.tier} className="min-w-[260px] sm:min-w-0">
               <PricingCard
                 {...tier}
-                onCta={tier.tier === "Group Lesson"
+                onCta={tier.tier === "Kids Group"
                   ? () => window.open(GROUP_LESSON_URL, "_blank")
                   : handleBookCourt}
               />
